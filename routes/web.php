@@ -14,3 +14,29 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('usuarios', function() {
+    return '<h1>usuarios</h1>';
+});
+
+// Route::get('usuarios/detalles', function(){
+    
+//     return 'mostrando detalles del usuario: ' . $_GET['id'];
+// });
+
+Route::get('usuarios/nuevo', function() {
+    return 'Creando un nuevo usuario';
+});
+
+Route::get('usuarios/{id}', function($id) {
+    return 'mostrando detalles del usuario: ' . $id;
+})->where('id','[0-9]+');
+
+Route::get('saludo/{name}/{nickname?}',function($name, $nickname = null){
+
+    if($nickname === null) return 'Bienvenido ' . $name;
+    else return 'Bienvenido ' . $name . '. Tu apodo es ' . $nickname;
+});
+
+
+
