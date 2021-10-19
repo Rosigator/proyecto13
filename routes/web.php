@@ -34,9 +34,12 @@ Route::get('usuarios/{id}', function($id) {
 
 Route::get('saludo/{name}/{nickname?}',function($name, $nickname = null){
 
-    if($nickname === null) return 'Bienvenido ' . $name;
-    else return 'Bienvenido ' . $name . '. Tu apodo es ' . $nickname;
-});
+    $saludo = 'Bienvenido ' . $name;
 
+    return $nickname
+
+        ? $saludo . '. Tu apodo es ' . $nickname
+        : $saludo;
+});
 
 
