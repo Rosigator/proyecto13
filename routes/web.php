@@ -15,14 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('usuarios', function() {
-    return '<h1>usuarios</h1>';
-});
-
-// Route::get('usuarios/detalles', function(){
-    
-//     return 'mostrando detalles del usuario: ' . $_GET['id'];
-// });
+Route::get('usuarios', 'UserController@index');
 
 Route::get('usuarios/nuevo', function() {
     return 'Creando un nuevo usuario';
